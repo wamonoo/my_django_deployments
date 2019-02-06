@@ -1,0 +1,64 @@
+.main-banner{
+    background-color: #429bf3;
+    opacity:0.8;
+    color: black;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 5px;
+}
+
+
+.myleftcolumn{
+  background-color: #efefe6;
+  width: 200px;
+  height: 500px;
+  color: black;
+  border: 3px solid lightblue;
+  padding: 20px;
+  margin-right: 10px;
+  float:left;
+  text-decoration: underline;
+}
+
+.myrightcolumn{
+  background-color: #f9f9f9;
+  width: 800px;
+  height: 500px;
+  border: 3px solid lightblue;
+  padding: 20px;
+  margin-left: 205px;
+}
+
+a.button {
+  background-color: #429bf3;
+  border: none;
+  color: white;
+  padding: 5px 35px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0.8
+}
+
+.button:hover {
+  background-color: #429bf3;
+  opacity: 1
+}
+
+/* - attempt to color asterisk inside input boxes red
+.form-row {
+    position: relative;
+}
+
+input {
+    padding-left: 48px;
+}
+
+.form-row span {
+    position: absolute;
+    left: 20px;
+}
+*/
+span {
+    color: red;
+}

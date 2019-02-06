@@ -1,0 +1,82 @@
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>All Forecasts Financial</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/aff_site.css' %}" type="text/css">
+        <!--<link rel="stylesheet" href="aff_site.css">-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="main-banner">
+            <h1><em>AFF -Enterprise Risk Analytics Event</em></h1>
+
+        </div>
+
+        <br>
+        <div class="container">
+        <!-- use a tags and css styling for buttons. insert hyperlinks for hrefs -->
+        <a href="" class="button">Activities</a>
+        <a href="" class="button">Future Events</a>
+        <a href="" class="button">Details</a>
+
+        <br>
+        <br>
+
+        <!--insert links into href -->
+        <div class="myleftcolumn" style = "height: 1000px;">
+            <p><a href = "{% url 'aff_site:home' %}">Home</a></p>
+
+            <p><a href = "">ERA Overview</a></p>
+
+            <p><a href = "">Exit</a></p>
+        </div>
+
+        <div class="myrightcolumn" style = "height: 1000px; width:500px">
+            <h3>Register for this event:</h3>
+            <small id="textrequired" class="form-text text-muted">
+              <span>*</span> indicates required field
+            </small>
+
+            <form method = "post">
+
+              {% csrf_token %}
+
+              {% for field in participant_form.visible_fields %}
+                <div class="form-row">
+                    <div class="col-md-8">
+
+                    {{ field.label_tag}}
+                <!-- {{ field }} -->
+                    {% render_field field class="form-control form-control-sm" %}
+                    {% if field.help_text %}
+                        <small class="form-text text-muted">{{ field.help_text }}</small>
+                    {% endif %}
+
+                </div>
+                </div>
+              {% endfor %}
+        <!--        <div class="form-group">
+                {{participant_form.as_p}}
+                {{address_form.as_p}}
+                {{city_form.as_p}}
+                {{country_form.as_p}}
+            </div> -->
+            <br>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        </div>
+        <br>
+
+        <div id="footerbuttons">
+            <a href="" style = "color: black;" class="button">About</a>
+            <a href="{% url 'aff_site:contacts' %}" style = "color: black;" class="button">Contacts</a>
+            <a href="" style = "color: black;" class="button">Help</a>
+
+        </div>
+        </div>
+        </body>
+</html>

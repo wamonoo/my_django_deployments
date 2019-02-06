@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>All Forecasts Financial</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/aff_site.css' %}" type="text/css">
+        <!--<link rel="stylesheet" href="aff_site.css">-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    </head>
+    <body>
+
+
+    <div class="main-banner">
+        <h1><em>AFF - All Forecasts Financial</em></h1>
+
+    </div>
+
+    <br>
+    <div class="container">
+    <!-- use a tags and css styling for buttons. insert hyperlinks for hrefs -->
+    <a href="" class="button">Products</a>
+    <a href="" class="button">Services</a>
+    <a href="" class="button">Investors</a>
+    <a href="" class="button">Login</a>
+
+    <br>
+    <br>
+    <!--insert links into href -->
+    <div class="myleftcolumn">
+        <p><a href = "{% url 'aff_site:home' %}">Home</a></p>
+
+        <p><a href = "">AFF Overview</a></p>
+
+        <p><a href = "{% url 'aff_site:register' %}">Sign Up for Event</a></p>
+    </div>
+
+    <div class="myrightcolumn">
+        <p>AFF is a great innovative company that has the following units:</p>
+
+        <ul>
+            <li>Analytics</li>
+            <li>Technology</li>
+            <li>Financial</li>
+            <li>AI - Artificial Intelligence</li>
+            <li>And Others</li>
+        </ul>
+        <p> Please send us an  <a href = "mailto:heveljb@gmail.com">email</a> to request information about these services.</p>
+    </div>
+    <br>
+
+    <div id="footerbuttons">
+        <a href="" style = "color: black;" class="button">About</a>
+        <a href="{% url 'aff_site:contacts' %}" style = "color: black;" class="button">Contacts</a>
+        <a href="" style = "color: black;" class="button">Help</a>
+
+    </div>
+    </div>
+    </body>
+    </html>

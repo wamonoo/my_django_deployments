@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>All Forecasts Financial</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'css/aff_site.css' %}" type="text/css">
+        <!--<link rel="stylesheet" href="aff_site.css">-->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    </head>
+    <body>
+
+
+    <div class="main-banner">
+        <h1><em>AFF - All Forecasts Financial</em></h1>
+
+    </div>
+
+    <br>
+    <div class="container">
+    <!-- use a tags and css styling for buttons. insert hyperlinks for hrefs -->
+    <a href="" class="button">Products</a>
+    <a href="" class="button">Services</a>
+    <a href="" class="button">Investors</a>
+    <a href="" class="button">Login</a>
+
+    <br>
+    <br>
+
+    <!--Use relative URL tagging-->
+    <div class="myleftcolumn">
+        <p><a href = "{% url 'aff_site:home' %}">Home</a></p>
+
+        <p><a href = "{% url 'aff_site:overview' %}">AFF Overview</a></p>
+
+        <p><a href = "{% url 'aff_site:register' %}">Sign Up for Event</a></p>
+    </div>
+
+    <!--use "mailto" to let users email program open email with address already in it -->
+    <div class="myrightcolumn">
+        <center>
+        <p>AFF is a great innovative company. Please click this link below to send us an email: </p>
+        <p>Email:<a href = "mailto:heveljb@gmail.com"> heveljb@gmail.com</a></p>
+        </center>
+
+    </div>
+    <br>
+
+    <div id="footerbuttons">
+        <a href="" style = "color: black;" class="button">About</a>
+        <a href="{% url 'aff_site:contacts' %}" style = "color: black;" class="button">Contacts</a>
+        <a href="" style = "color: black;" class="button">Help</a>
+
+    </div>
+    </div>
+
+    </body>
+</html>

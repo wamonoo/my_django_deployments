@@ -1,0 +1,1 @@
+web: gunicorn aff_project.wsgi --log-file -
