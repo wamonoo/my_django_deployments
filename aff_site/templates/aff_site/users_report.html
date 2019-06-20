@@ -1,35 +1,5 @@
-{% extends 'aff_site/base.html' %}
-{% load static %}
-{% block body_block %}
 
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="{% static 'css/aff_site.css' %}" type="text/css">
-<div class="myleftcolumn">
-    <p><a href = "{% url 'aff_site:home' %}">Home</a></p>
-
-    <p><a href = "{%url 'aff_site:overview' %}">AFF Overview</a></p>
-
-    <p><a href = "{% url 'aff_site:register' %}">Sign Up for Event</a></p>
-
-</div>
-
-<div class="myrightcolumn">
-    <p>AFF is a great innovative company that has the following units:</p>
-
-    <ul>
-        <li>Analytics</li>
-        <li>Technology</li>
-        <li>Financial</li>
-        <li>AI - Artificial Intelligence</li>
-        <li>And Others</li>
-    </ul>
-
-</div>
-<br>
-
-{% endblock %}
-<!--
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
@@ -37,7 +7,24 @@
         <title>All Forecasts Financial</title>
         {% load static %}
         <link rel="stylesheet" href="{% static 'css/aff_site.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/ui-gridmin.css' %}" type="text/css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.0/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.0/angular-touch.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.0/angular-animate.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.0/angular-aria.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/lodash.min.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/jszip.min.js"></script>
+    <script src="http://ui-grid.info/docs/grunt-scripts/excel-builder.dist.js"></script>
+
+
+        <script src="{% static 'js/app.js' %}"></script>
+
     </head>
     <body>
 
@@ -49,10 +36,7 @@
 
     <br>
     <div class="container">
-    -->
     <!-- use a tags and css styling for buttons. insert hyperlinks for hrefs -->
-
-<!--
     <a href="" class="button">Products</a>
     <a href="" class="button">Services</a>
     <a href="" class="button">Investors</a>
@@ -61,14 +45,14 @@
 
     <br>
     <br>
-    <!
+    <!--
     <button class="button" name="products">Products</button>
     <button class="button" name="services">Services</button>
     <button class="button" name="investors">Investors</button>
     <button class="button" name="login">Login</button>
+    -->
 
-
-    <!insert links into href -
+    <!--insert links into href -->
     <div class="myleftcolumn">
         <p><a href = "{% url 'aff_site:home' %}">Home</a></p>
 
@@ -76,6 +60,7 @@
 
         <p><a href = "{% url 'aff_site:register' %}">Sign Up for Event</a></p>
 
+        <p><a href = "{% url 'aff_site:users_report' %}">List of Users</a></p>
 
         <p><a href = "{% url 'aff_site:portal_landing' %}">User Portal</a></p>
     </div>
@@ -83,15 +68,9 @@
     <div class="myrightcolumn">
 
 
-        <p>AFF is a great innovative company that has the following units:</p>
-
-        <ul>
-            <li>Analytics</li>
-            <li>Technology</li>
-            <li>Financial</li>
-            <li>AI - Artificial Intelligence</li>
-            <li>And Others</li>
-        </ul>
+        <div ng-controller="MainCtrl as $ctrl">
+          <div id="grid1" ui-grid="{ data: $ctrl.myData }" class="myGrid"></div>
+        </div>
 
 
     </div>
@@ -106,4 +85,3 @@
     </div>
     </body>
 </html>
--->

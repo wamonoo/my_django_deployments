@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends "aff_site/base.html"%}
+    {% block body_block %}
+        <div class = "form-group">
+
+        <h2>Please login</h2>
+        <br>
+        <form class="{% url 'aff_site:user_login' %}" method="post">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <br>
+            <input type="text" name="username" placeholder = "username">
+            <p></p>
+            <label for="password">Password:</label>
+            <br>
+            <input type="password" name="password">
+            <p></p>
+            <input type="submit" name="" value="Login">
+
+        </form>
+
+    {% endblock %}

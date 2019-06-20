@@ -29,6 +29,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = ['aff-app-01.herokuapp.com']
+#ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -42,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'aff_site',
     'widget_tweaks',
+    'rest_framework',
+    'django_tables2'
 ]
 
 MIDDLEWARE = [
@@ -62,6 +65,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [TEMPLATE_DIR,],
+        #'DIRS':[os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -88,12 +92,31 @@ DATABASES = {
         'PASSWORD': os.environ.get('REGISTRATION_DB_PASS'),
         'HOST': 'localhost',
         'PORT':'',
+    },
+
+    'users': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'portal_user',
+        'USER': 'root',
+        'PASSWORD': os.environ.get('REGISTRATION_DB_PASS'),
+        'HOST': 'localhost',
+        'PORT':'',
     }
 }
 
 
+
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
+#use password hashers in the list
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.BCryptPasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+]
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -110,6 +133,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+#configure email settings for resetting password
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
@@ -134,5 +158,7 @@ DATABASES['default'].update(db_from_env)
 
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 STATIC_URL = '/static/'
+
+LOGIN_URL = 'aff_site/user_login'
 
 #STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)

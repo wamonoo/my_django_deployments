@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 #from django.utils import timezone
 # Create your models here.
 
@@ -7,7 +8,7 @@ class Participant(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     phone = models.CharField(max_length = 20)
-    email = models.CharField(max_length=50)
+    email = models.EmailField(max_length=50)
     #address = models.ForeignKey('Address', on_delete=models.CASCADE, blank=True, null=True) #automatically inserts _id at end of ForeignKey
     address = models.CharField(max_length=50, null = True)
     address2 = models.CharField(max_length=50, blank=True, null = True)
@@ -15,16 +16,40 @@ class Participant(models.Model):
     city = models.CharField(max_length=50)
     country = models.CharField(max_length=50)
     comments = models.TextField(blank = True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
-    def __str__(self):
-        #return self.first_name + " " + self.last_name
-        return f'{self.last_name}, {self.first_name}, {self.email}, {self.address}, {self.city}, {self.country}'
-        #create_date = models.DateTimeField(default = timezone.now())
+    #def __str__(self):
+    #    return f'{self.last_name}, {self.first_name}, {self.email}, {self.address}, {self.city}, {self.country}'
+
+    #def report_view(self, request):
+    #    data = (self.user_report(user) for user in User.objects.all().order_by('first_name'))
+    #    context = {'report': json.dumps(list(data))}
+    #    return HttpResponse(render(request,
+    #                           'admin/users_report.html',
+    #                           context),
+    #                    content_type='text/html')
 
 class Meta:
     #managed = False
     db_table = 'participant'
 
+
+class Portal_user(models.Model):
+
+     #Create relationship (don't inherit from User!)
+    #user = models.OneToOneField(User, on_delete=None)
+
+    username = models.CharField(max_length=50, unique = True)
+    email = models.EmailField(max_length=50, unique = True)
+    password = models.CharField(max_length = 100)
+    password2 = models.CharField(max_length = 100)
+
+    def __str__(self):
+        return self.username + " " + self.email + " " +self.password
+
+class Meta:
+    #managed = False
+    db_table = 'portal_user'
 
 '''
 class Address(models.Model):
