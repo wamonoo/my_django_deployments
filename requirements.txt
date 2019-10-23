@@ -46,7 +46,7 @@ flower==0.9.1
 futures==3.0.5
 greenlet==0.4.15
 gunicorn==19.9.0
-httpie==0.9.3
+httpie==1.0.3
 idna==2.8
 itsdangerous==0.24
 jdcal==1.2
