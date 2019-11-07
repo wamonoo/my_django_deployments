@@ -27,9 +27,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!Specify
 DEBUG = False
-
+#DEBUG = True
 ALLOWED_HOSTS = ['aff-app-01.herokuapp.com']
-#ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -83,11 +83,11 @@ WSGI_APPLICATION = 'aff_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'registration_db',
+        'NAME': 'Participant',
         'USER': 'root',
         'PASSWORD': os.environ.get('REGISTRATION_DB_PASS'),
         'HOST': 'localhost',
@@ -103,7 +103,14 @@ DATABASES = {
         'PORT':'',
     }
 }
+'''
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
+    }
+}
 
 
 # Password validation
@@ -158,7 +165,7 @@ DATABASES['default'].update(db_from_env)
 
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 STATIC_URL = '/static/'
+#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]
 
+#login url
 LOGIN_URL = 'aff_site/user_login'
-
-#STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)

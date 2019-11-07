@@ -20,6 +20,9 @@ urlpatterns = [
     url(r'^portal_landing/$', views.portal_landing, name = 'portal_landing'),
     url(r'^registration/$', views.register, name='register'),
     url(r'^signup/$', views.signup, name = 'signup'),
+    url(r'^products/$', views.products, name = 'products'),
+    url(r'^services/$', views.services, name = 'services'),
+    url(r'^investors/$', views.investors, name = 'investors'),
     #url(r'^users_report/$', views.users_report, name = 'users_report'),
     #use @api_view decorator in views
     #url(r'^participantlist/$', views.participantlist, name = 'participantlist'),

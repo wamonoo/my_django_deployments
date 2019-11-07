@@ -34,6 +34,15 @@ def contacts(request):
 def overview(request):
     return render (request, 'aff_site/overview.html')
 
+def products(request):
+    return render (request, 'aff_site/products.html')
+
+def services(request):
+    return render (request, 'aff_site/services.html')
+
+def investors(request):
+    return render (request, 'aff_site/investors.html')
+
 def participant_list(request):
     table = ParticipantTable(Participant.objects.all())
 
