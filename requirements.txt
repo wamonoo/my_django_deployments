@@ -76,7 +76,7 @@ python-engineio==0.9.0
 python-socketio==1.2
 pytz==2017.2
 
-requests==2.9.1
+requests==2.20.0
 scipy==1.2.1
 six==1.10.0
 SQLAlchemy==1.0.12
