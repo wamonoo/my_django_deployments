@@ -50,7 +50,7 @@ httpie==0.9.3
 idna==2.8
 itsdangerous==0.24
 jdcal==1.2
-Jinja2==2.8
+Jinja2==2.11.3
 kiwisolver==1.0.1
 kombu==3.0.35
 Mako==1.0.4
